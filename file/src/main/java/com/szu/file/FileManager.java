@@ -299,14 +299,14 @@ public class FileManager {
         return result;
     }
 
-    /*申请录音权限、写入文件权限*/
+    /*申请读写文件权限*/
     private static final int GET_WRITE_EXTERNAL_STORAGE = 1;
     private static String[] PERMISSION_FILE = {
             Manifest.permission.WRITE_EXTERNAL_STORAGE
     };
 
     /*
-     * 申请录音权限*/
+     * 申请读写文件权限*/
     public static void verifyAudioPermissions(Activity activity) {
         int permissionWrite = ActivityCompat.checkSelfPermission(activity,
                 Manifest.permission.WRITE_EXTERNAL_STORAGE);
