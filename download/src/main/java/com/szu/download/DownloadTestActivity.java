@@ -10,6 +10,7 @@ import android.content.pm.PackageManager;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.EditText;
 import android.widget.Toast;
 
 import java.io.File;
@@ -19,6 +20,8 @@ public class DownloadTestActivity extends AppCompatActivity {
     public int mDownLoadID;
     public static String TAG = "DownloadTestActivity";
     IDownloadService mDownloadService;
+    EditText mUrlEditText;
+    String mUrl;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,10 +30,11 @@ public class DownloadTestActivity extends AppCompatActivity {
         requestDownloadPermissions(this);
         mDownloadService = new DownloadService();
         initUI();
-
     }
 
     public void initUI() {
+        mUrlEditText = findViewById(R.id.download_url);
+        mUrl = mUrlEditText.getText().toString();
         findViewById(R.id.start_download).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -38,6 +42,9 @@ public class DownloadTestActivity extends AppCompatActivity {
                 String fileName = "test.apk";
                 String pathname = getExternalFilesDir(null).getAbsolutePath() + File.separator + fileName;
 
+                if (mUrl != null && !mUrl.equals("")) {
+                    url = mUrl;
+                }
                 mDownloadService.startDownload(DownloadTestActivity.this, fileName, url, pathname, 1, new IDownloadClientListener() {
                     @Override
                     public void onProgress(int progress) {
