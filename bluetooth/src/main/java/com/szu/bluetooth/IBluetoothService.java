@@ -6,6 +6,9 @@ import java.util.List;
 
 public interface IBluetoothService {
 
+    /**
+     * 初始化蓝牙功能
+     * */
     void initBluetooth(Activity activity);
 
     /**
