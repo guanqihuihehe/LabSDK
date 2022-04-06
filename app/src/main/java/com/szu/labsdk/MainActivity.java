@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.os.Bundle;
 
 import com.szu.bluetooth.BluetoothTestActivity;
+import com.szu.download.DownloadTestActivity;
 import com.szu.file.FileTestActivity;
 
 public class MainActivity extends AppCompatActivity {
@@ -25,6 +26,11 @@ public class MainActivity extends AppCompatActivity {
 
         findViewById(R.id.bluetooth_test).setOnClickListener(v -> {
             Intent intent = new Intent(MainActivity.this, BluetoothTestActivity.class);
+            startActivity(intent);
+        });
+
+        findViewById(R.id.download_test).setOnClickListener(v -> {
+            Intent intent = new Intent(MainActivity.this, DownloadTestActivity.class);
             startActivity(intent);
         });
     }

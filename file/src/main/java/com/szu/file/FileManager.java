@@ -145,7 +145,7 @@ public class FileManager {
      * 在指定路径下创建文件夹
      * */
     public void createDir(String dirName, String parentPath) {
-        verifyAudioPermissions((Activity) mContext);
+        requestFilePermissions((Activity) mContext);
         String appPath = getExternalFilePath();
         if (!parentPath.startsWith(appPath)) {
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q) {
@@ -173,7 +173,7 @@ public class FileManager {
      * 在指定路径下创建文件
      * */
     public void createFile(String fileName, String parentPath) {
-        verifyAudioPermissions((Activity) mContext);
+        requestFilePermissions((Activity) mContext);
         String appPath = getExternalFilePath();
         if (!parentPath.startsWith(appPath)) {
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q) {
@@ -213,7 +213,7 @@ public class FileManager {
      * 在指定路径下删除文件
      * */
     public void deleteFile(String fileName, String parentPath) {
-        verifyAudioPermissions((Activity) mContext);
+        requestFilePermissions((Activity) mContext);
         String appPath = getExternalFilePath();
         if (!parentPath.startsWith(appPath)) {
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q) {
@@ -248,7 +248,7 @@ public class FileManager {
      * 在指定路径下删除文件夹
      * */
     public void deleteDir(String dirName, String parentPath) {
-        verifyAudioPermissions((Activity) mContext);
+        requestFilePermissions((Activity) mContext);
         String appPath = getExternalFilePath();
         if (!parentPath.startsWith(appPath)) {
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q) {
@@ -300,14 +300,14 @@ public class FileManager {
     }
 
     /*申请读写文件权限*/
-    private static final int GET_WRITE_EXTERNAL_STORAGE = 1;
+    private static final int GET_WRITE_EXTERNAL_STORAGE = 0;
     private static String[] PERMISSION_FILE = {
             Manifest.permission.WRITE_EXTERNAL_STORAGE
     };
 
     /*
      * 申请读写文件权限*/
-    public static void verifyAudioPermissions(Activity activity) {
+    public static void requestFilePermissions(Activity activity) {
         int permissionWrite = ActivityCompat.checkSelfPermission(activity,
                 Manifest.permission.WRITE_EXTERNAL_STORAGE);
         if (permissionWrite != PackageManager.PERMISSION_GRANTED) {

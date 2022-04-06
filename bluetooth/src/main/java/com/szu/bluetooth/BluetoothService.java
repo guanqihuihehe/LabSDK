@@ -74,9 +74,6 @@ public class BluetoothService implements IBluetoothService {
         Intent discoverableIntent  = new Intent(BluetoothAdapter.ACTION_REQUEST_DISCOVERABLE);
         discoverableIntent.putExtra(BluetoothAdapter.EXTRA_DISCOVERABLE_DURATION,0);
         mActivity.startActivity(discoverableIntent);
-
-
-
     }
 
     /**

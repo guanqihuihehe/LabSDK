@@ -16,3 +16,4 @@ rootProject.name = "LabSDK"
 include ':app'
 include ':file'
 include ':bluetooth'
+include ':download'
