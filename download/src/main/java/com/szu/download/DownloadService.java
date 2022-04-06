@@ -1,5 +1,7 @@
 package com.szu.download;
 
+import android.Manifest;
+import android.app.Activity;
 import android.app.Notification;
 import android.app.NotificationChannel;
 import android.app.NotificationManager;
@@ -9,6 +11,7 @@ import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
+import android.content.pm.PackageManager;
 import android.graphics.BitmapFactory;
 import android.graphics.Color;
 import android.net.Uri;
@@ -18,6 +21,7 @@ import android.util.Log;
 import android.widget.Toast;
 
 import androidx.annotation.Nullable;
+import androidx.core.app.ActivityCompat;
 import androidx.core.app.NotificationCompat;
 
 
@@ -196,6 +200,7 @@ public class DownloadService extends Service implements IDownloadService{
 
     @Override
     public void startDownload(Context context, String fileName, String url, String path, int type, IDownloadClientListener clientListener) {
+        requestDownloadPermissions((Activity) context);
         Intent initIntent = new Intent(context, DownloadService.class);
         initIntent.putExtra("action","init");
         context.startService(initIntent);
@@ -305,5 +310,40 @@ public class DownloadService extends Service implements IDownloadService{
         }
 
         return builder.build();
+    }
+
+    /*申请权限*/
+    private static final int WRITE_EXTERNAL_STORAGE = 0;
+    private static final int READ_EXTERNAL_STORAGE = 1;
+    private static final int INTERNET = 2;
+    private static String[] PERMISSIONS = {
+            Manifest.permission.WRITE_EXTERNAL_STORAGE,
+            Manifest.permission.READ_EXTERNAL_STORAGE,
+            Manifest.permission.INTERNET
+    };
+
+    /*
+     * 申请权限*/
+    public static void requestDownloadPermissions(Activity activity) {
+        int permission1 = ActivityCompat.checkSelfPermission(activity,
+                Manifest.permission.WRITE_EXTERNAL_STORAGE);
+        if (permission1 != PackageManager.PERMISSION_GRANTED) {
+            ActivityCompat.requestPermissions(activity, PERMISSIONS,
+                    WRITE_EXTERNAL_STORAGE);
+        }
+
+        int permission2 = ActivityCompat.checkSelfPermission(activity,
+                Manifest.permission.READ_EXTERNAL_STORAGE);
+        if (permission2 != PackageManager.PERMISSION_GRANTED) {
+            ActivityCompat.requestPermissions(activity, PERMISSIONS,
+                    READ_EXTERNAL_STORAGE);
+        }
+
+        int permission3 = ActivityCompat.checkSelfPermission(activity,
+                Manifest.permission.INTERNET);
+        if (permission3 != PackageManager.PERMISSION_GRANTED) {
+            ActivityCompat.requestPermissions(activity, PERMISSIONS,
+                    INTERNET);
+        }
     }
 }

@@ -30,7 +30,7 @@ public class UploadTestActivity extends AppCompatActivity {
                     Toast.makeText(UploadTestActivity.this, "srcPath为空", Toast.LENGTH_SHORT).show();
                     return;
                 }
-                 mUploadService.startUpload(srcPath, url, new IUploadListener() {
+                 mUploadService.startUpload(UploadTestActivity.this, srcPath, url, new IUploadListener() {
                      @Override
                      public void onStart() {
                          Toast.makeText(UploadTestActivity.this, "start upload", Toast.LENGTH_SHORT).show();

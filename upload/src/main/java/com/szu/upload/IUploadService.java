@@ -1,5 +1,7 @@
 package com.szu.upload;
 
+import android.app.Activity;
+
 public interface IUploadService {
-    void startUpload(String srcPath, String uploadUrl, IUploadListener uploadListener);
+    void startUpload(Activity activity, String srcPath, String uploadUrl, IUploadListener uploadListener);
 }

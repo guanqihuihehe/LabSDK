@@ -27,7 +27,6 @@ public class DownloadTestActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_download_test);
-        requestDownloadPermissions(this);
         mDownloadService = new DownloadService();
         initUI();
     }
@@ -98,40 +97,5 @@ public class DownloadTestActivity extends AppCompatActivity {
                 mDownloadService.resumeDownload(mDownLoadID);
             }
         });
-    }
-
-    /*申请读写文件权限*/
-    private static final int WRITE_EXTERNAL_STORAGE = 0;
-    private static final int READ_EXTERNAL_STORAGE = 1;
-    private static final int INTERNET = 2;
-    private static String[] PERMISSIONS = {
-            Manifest.permission.WRITE_EXTERNAL_STORAGE,
-            Manifest.permission.READ_EXTERNAL_STORAGE,
-            Manifest.permission.INTERNET
-    };
-
-    /*
-     * 申请读写文件权限*/
-    public static void requestDownloadPermissions(Activity activity) {
-        int permission1 = ActivityCompat.checkSelfPermission(activity,
-                Manifest.permission.WRITE_EXTERNAL_STORAGE);
-        if (permission1 != PackageManager.PERMISSION_GRANTED) {
-            ActivityCompat.requestPermissions(activity, PERMISSIONS,
-                    WRITE_EXTERNAL_STORAGE);
-        }
-
-        int permission2 = ActivityCompat.checkSelfPermission(activity,
-                Manifest.permission.READ_EXTERNAL_STORAGE);
-        if (permission2 != PackageManager.PERMISSION_GRANTED) {
-            ActivityCompat.requestPermissions(activity, PERMISSIONS,
-                    READ_EXTERNAL_STORAGE);
-        }
-
-        int permission3 = ActivityCompat.checkSelfPermission(activity,
-                Manifest.permission.INTERNET);
-        if (permission3 != PackageManager.PERMISSION_GRANTED) {
-            ActivityCompat.requestPermissions(activity, PERMISSIONS,
-                    INTERNET);
-        }
     }
 }
