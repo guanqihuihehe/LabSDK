@@ -300,6 +300,6 @@ public class BluetoothTestActivity extends AppCompatActivity implements AdapterV
             Log.i("MyHandler", msg.obj.toString());// 接收其他设备传过来的消息
             Toast.makeText(bluetoothTestActivity, (String) msg.obj, Toast.LENGTH_SHORT).show();
         }
-    };
+    }
 }
 
