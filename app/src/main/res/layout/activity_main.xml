@@ -58,6 +58,13 @@
             android:layout_margin="10dp"
             android:id="@+id/audio_test"
             android:text="录音和播放测试"/>
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:id="@+id/sensor_test"
+            android:text="传感器测试"/>
     </LinearLayout>
 
 

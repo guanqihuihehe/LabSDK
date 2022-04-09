@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:id="@+id/get_sensors"
+            android:text="获取传感器列表"/>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="3dp"
+            android:orientation="vertical">
+            <TextView
+                android:layout_width="match_parent"
+                android:id="@+id/available_sensors_tips"
+                android:layout_height="20dp"
+                android:text="本设备所支持的所有传感器："/>
+
+            <ListView
+                android:id="@+id/available_sensors_listview"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"/>
+        </LinearLayout>
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="3dp"
+                    android:orientation="vertical">
+                    <Button
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/listen_accelerometer_sensor"
+                        android:text="监听加速度计"/>
+
+                    <Button
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/listen_magnetic_sensor"
+                        android:text="监听磁力计"/>
+
+                    <Button
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/listen_gyroscope_sensor"
+                        android:text="监听陀螺仪"/>
+
+                    <Button
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/calculate_orientation_sensor"
+                        android:text="计算设备倾角"/>
+
+                    <Button
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/stop_listen"
+                        android:text="停止监听"/>
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="3dp"
+                    android:orientation="vertical">
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:id="@+id/accelerometer_sensor_tips"
+                        android:layout_height="wrap_content"
+                        android:text="accelerometer sensor："/>
+
+                    <TextView
+                        android:id="@+id/accelerometer_sensor"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"/>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="3dp"
+                    android:orientation="vertical">
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:id="@+id/magnetic_sensor_tips"
+                        android:layout_height="wrap_content"
+                        android:text="magnetic sensor："/>
+
+                    <TextView
+                        android:id="@+id/magnetic_sensor"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"/>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="3dp"
+                    android:orientation="vertical">
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:id="@+id/gyroscope_sensor_tips"
+                        android:layout_height="wrap_content"
+                        android:text="gyroscope sensor："/>
+
+                    <TextView
+                        android:id="@+id/gyroscope_sensor"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"/>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="3dp"
+                    android:orientation="vertical">
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:id="@+id/orientation_sensor_tips"
+                        android:layout_height="wrap_content"
+                        android:text="orientation sensor："/>
+
+                    <TextView
+                        android:id="@+id/orientation_sensor"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"/>
+                </LinearLayout>
+            </LinearLayout>
+        </ScrollView>
+
+    </LinearLayout>
+
+</LinearLayout>
