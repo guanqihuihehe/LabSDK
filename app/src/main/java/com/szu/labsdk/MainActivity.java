@@ -8,6 +8,7 @@ import android.os.Bundle;
 import com.szu.bluetooth.BluetoothTestActivity;
 import com.szu.download.DownloadTestActivity;
 import com.szu.file.FileTestActivity;
+import com.szu.photo.PhotoTestActivity;
 import com.szu.upload.UploadTestActivity;
 import com.szu.wifi.WiFiTestActivity;
 
@@ -43,6 +44,11 @@ public class MainActivity extends AppCompatActivity {
 
         findViewById(R.id.wifi_test).setOnClickListener(v -> {
             Intent intent = new Intent(MainActivity.this, WiFiTestActivity.class);
+            startActivity(intent);
+        });
+
+        findViewById(R.id.photo_test).setOnClickListener(v -> {
+            Intent intent = new Intent(MainActivity.this, PhotoTestActivity.class);
             startActivity(intent);
         });
     }
