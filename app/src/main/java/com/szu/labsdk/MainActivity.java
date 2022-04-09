@@ -51,5 +51,10 @@ public class MainActivity extends AppCompatActivity {
             Intent intent = new Intent(MainActivity.this, PhotoTestActivity.class);
             startActivity(intent);
         });
+
+        findViewById(R.id.audio_test).setOnClickListener(v -> {
+            Intent intent = new Intent(MainActivity.this, AudioTestActivity.class);
+            startActivity(intent);
+        });
     }
 }

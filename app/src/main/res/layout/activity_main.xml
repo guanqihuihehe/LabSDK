@@ -52,6 +52,12 @@
             android:id="@+id/photo_test"
             android:text="照片测试"/>
 
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:id="@+id/audio_test"
+            android:text="录音和播放测试"/>
     </LinearLayout>
 
 
