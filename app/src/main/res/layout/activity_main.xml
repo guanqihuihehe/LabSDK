@@ -65,6 +65,20 @@
             android:layout_margin="10dp"
             android:id="@+id/sensor_test"
             android:text="传感器测试"/>
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:id="@+id/video_record_test"
+            android:text="视频录制测试"/>
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:id="@+id/video_play_test"
+            android:text="视频播放测试"/>
     </LinearLayout>
 
 

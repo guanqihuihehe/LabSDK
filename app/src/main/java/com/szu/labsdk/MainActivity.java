@@ -11,6 +11,8 @@ import com.szu.file.FileTestActivity;
 import com.szu.photo.PhotoTestActivity;
 import com.szu.sensor.SensorTestActivity;
 import com.szu.upload.UploadTestActivity;
+import com.szu.video_play.VideoPlayTestActivity;
+import com.szu.video_record.VideoRecordTestActivity;
 import com.szu.wifi.WiFiTestActivity;
 
 public class MainActivity extends AppCompatActivity {
@@ -60,6 +62,16 @@ public class MainActivity extends AppCompatActivity {
 
         findViewById(R.id.sensor_test).setOnClickListener(v -> {
             Intent intent = new Intent(MainActivity.this, SensorTestActivity.class);
+            startActivity(intent);
+        });
+
+        findViewById(R.id.video_record_test).setOnClickListener(v -> {
+            Intent intent = new Intent(MainActivity.this, VideoRecordTestActivity.class);
+            startActivity(intent);
+        });
+
+        findViewById(R.id.video_play_test).setOnClickListener(v -> {
+            Intent intent = new Intent(MainActivity.this, VideoPlayTestActivity.class);
             startActivity(intent);
         });
     }

@@ -2,9 +2,12 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.szu.video_record">
 
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+
     <application>
         <activity
-            android:name=".VideoRecordActivity"
+            android:name=".VideoRecordTestActivity"
             android:exported="false" />
     </application>
 
