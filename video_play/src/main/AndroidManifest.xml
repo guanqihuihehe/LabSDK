@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.szu.video_play" >
+
+    <application>
+        <activity
+            android:name=".VideoPlayTestActivity"
+            android:exported="false" />
+    </application>
+
+</manifest>

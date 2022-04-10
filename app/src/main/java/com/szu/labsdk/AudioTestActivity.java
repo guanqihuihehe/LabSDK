@@ -11,10 +11,10 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 
-import com.szu.broadcast.AudioPlayService;
-import com.szu.broadcast.IAudioPlayService;
-import com.szu.record.AudioRecordService;
-import com.szu.record.IAudioRecordService;
+import com.szu.audio_play.AudioPlayService;
+import com.szu.audio_play.IAudioPlayService;
+import com.szu.audio_record.AudioRecordService;
+import com.szu.audio_record.IAudioRecordService;
 
 import java.io.File;
 
