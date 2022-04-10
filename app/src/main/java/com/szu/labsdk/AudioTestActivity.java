@@ -196,7 +196,7 @@ public class AudioTestActivity  extends AppCompatActivity {
      * 获取当前根目录的绝对路径
      */
     public String getPathFromStorage() {
-        File file = this.getExternalFilesDir("audiorecord");
+        File file = this.getExternalFilesDir("AudioRecord");
         if (!file.exists()) {
             try {
                 file.mkdir();
