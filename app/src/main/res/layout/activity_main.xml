@@ -79,6 +79,13 @@
             android:layout_margin="10dp"
             android:id="@+id/video_play_test"
             android:text="视频播放测试"/>
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:id="@+id/python_test"
+            android:text="python测试"/>
     </LinearLayout>
 
 

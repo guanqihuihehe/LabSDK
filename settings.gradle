@@ -3,6 +3,11 @@ pluginManagement {
         gradlePluginPortal()
         google()
         mavenCentral()
+        maven { url "https://chaquo.com/maven" }
+        maven {
+            name 'ossrh-snapshot'
+            url 'https://oss.sonatype.org/content/repositories/snapshots'
+        }
     }
 }
 dependencyResolutionManagement {
@@ -10,6 +15,11 @@ dependencyResolutionManagement {
     repositories {
         google()
         mavenCentral()
+        maven { url "https://chaquo.com/maven" }
+        maven {
+            name 'ossrh-snapshot'
+            url 'https://oss.sonatype.org/content/repositories/snapshots'
+        }
     }
 }
 rootProject.name = "LabSDK"
@@ -26,3 +36,4 @@ include ':base'
 include ':sensor'
 include ':video_play'
 include ':video_record'
+include ':python'
