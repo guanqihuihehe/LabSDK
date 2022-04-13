@@ -295,8 +295,8 @@ public class DownloadService extends Service implements IDownloadService{
         PendingIntent pendingIntentCancel = PendingIntent.getBroadcast(this, 0, intentCancel, PendingIntent.FLAG_UPDATE_CURRENT);
 
         NotificationCompat.Builder builder = new NotificationCompat.Builder(this);
-        builder.setSmallIcon(R.mipmap.ic_launcher);
-        builder.setLargeIcon(BitmapFactory.decodeResource(getResources(), R.mipmap.ic_launcher));
+        builder.setSmallIcon(com.szu.base.R.mipmap.ic_launcher);
+        builder.setLargeIcon(BitmapFactory.decodeResource(getResources(), com.szu.base.R.mipmap.ic_launcher));
 //        builder.setContentIntent(pi);
         builder.setContentTitle(title);
         builder.setContentIntent(pendingIntentClick);

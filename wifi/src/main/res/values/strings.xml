@@ -1,5 +1,4 @@
 <resources>
-    <string name="app_name">WifiPiont</string>
     <string name="group_owner_text">group_ower_</string>
     <string name="yes">yes</string>
     <string name="no">no</string>

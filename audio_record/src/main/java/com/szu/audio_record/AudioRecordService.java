@@ -69,7 +69,7 @@ public class AudioRecordService extends Service implements IAudioRecordService {
 
         //使用这个NotificationCompat代替Notification是解决Bad notification for startForeground问题的关键2
         Notification notification = new NotificationCompat.Builder(this,CHANNEL_ONE_ID)
-                .setSmallIcon((R.drawable.ic_launcher_foreground))
+                .setSmallIcon((com.szu.base.R.drawable.ic_launcher_foreground))
                 .setWhen(System.currentTimeMillis())
                 .setContentTitle("正在录音")
                 .setContentText("")

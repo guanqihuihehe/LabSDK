@@ -1,9 +1,47 @@
+import java.lang.reflect.Type
+
 // Top-level build file where you can add configuration options common to all sub-projects/modules.
+buildscript {
+    dependencies {
+        classpath 'com.github.kezong:fat-aar:1.3.8'
+    }
+}
 plugins {
     id 'com.android.application' version '7.1.2' apply false
     id 'com.android.library' version '7.1.2' apply false
     id 'org.jetbrains.kotlin.android' version '1.5.30' apply false
     id 'com.chaquo.python' version '11.0.0' apply false
+}
+
+task packDemo(type: Exec) {
+    def modulePropertiesFile = new File("${rootDir}/local.properties")
+    def moduleProperties = new Properties()
+    moduleProperties.load(new FileInputStream(modulePropertiesFile))
+    def doPack = moduleProperties.getProperty("do_pack");
+    if (doPack == "true") {
+        println "packDemo : doPack == true"
+        commandLine( 'gradlew.bat', 'pack_demo:assemble')
+        commandLine( 'gradlew.bat', 'pack:assemble')
+    } else {
+        println "packDemo: doPack == false"
+        commandLine('gradlew.bat', '-v')
+    }
+}
+
+task copyAar(type: Copy) {
+    def modulePropertiesFile = new File("${rootDir}/local.properties")
+    def moduleProperties = new Properties()
+    moduleProperties.load(new FileInputStream(modulePropertiesFile))
+    def isPackTest = moduleProperties.getProperty("is_pack_test");
+    if (isPackTest == "true") {
+        println "copyAar : isPackTest == true"
+        from 'pack_demo/build/outputs/aar'
+        into 'app/libs'
+        from 'pack/build/outputs/aar'
+        into 'app/libs'
+    } else {
+        println "copyAar: isPackTest == false"
+    }
 }
 
 task clean(type: Delete) {

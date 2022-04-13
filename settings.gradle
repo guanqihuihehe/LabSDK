@@ -8,6 +8,7 @@ pluginManagement {
             name 'ossrh-snapshot'
             url 'https://oss.sonatype.org/content/repositories/snapshots'
         }
+        maven { url "https://plugins.gradle.org/m2/" }
     }
 }
 dependencyResolutionManagement {
@@ -20,9 +21,26 @@ dependencyResolutionManagement {
             name 'ossrh-snapshot'
             url 'https://oss.sonatype.org/content/repositories/snapshots'
         }
+        maven { url "https://plugins.gradle.org/m2/" }
     }
 }
 rootProject.name = "LabSDK"
+
+//def modulePropertiesFile = new File("${rootDir}/local.properties")
+//def moduleProperties = new Properties()
+//moduleProperties.load(new FileInputStream(modulePropertiesFile))
+//println "print ${moduleProperties.getProperty("sdk.dir")}"
+//
+//def includeModules = moduleProperties.getProperty("include_module")
+//println "print ${includeModules}"
+//String [] modules = includeModules.split(",")
+//
+//for (int i = 0; i<modules.length; i++) {
+//    println "print ${modules[i]}"
+//    include ":${modules[i]}"
+//}
+println "rootDir: ${rootDir}"
+
 include ':app'
 include ':file'
 include ':bluetooth'
@@ -37,3 +55,6 @@ include ':sensor'
 include ':video_play'
 include ':video_record'
 include ':python'
+include ':pack'
+include ':python_api'
+include ':pack_demo'
