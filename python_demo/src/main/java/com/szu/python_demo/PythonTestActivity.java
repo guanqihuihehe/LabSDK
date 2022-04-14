@@ -25,8 +25,6 @@ public class PythonTestActivity extends AppCompatActivity {
 
     static final String TAG = "PythonOnAndroid";
 
-
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
