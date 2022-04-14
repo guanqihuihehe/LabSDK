@@ -1,16 +1,17 @@
-package com.szu.video_record;
+package com.szu.video_record_demo;
 
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.app.ActivityCompat;
-
-import android.Manifest;
-import android.app.Activity;
-import android.content.pm.PackageManager;
 import android.hardware.Camera;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.TextureView;
 import android.view.View;
+
+import androidx.appcompat.app.AppCompatActivity;
+
+import com.szu.video_record.IVideoListener;
+import com.szu.video_record.IVideoService;
+import com.szu.video_record.VideoRecorderConfig;
+import com.szu.video_record.VideoService;
 
 import java.io.File;
 

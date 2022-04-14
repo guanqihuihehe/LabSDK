@@ -1,4 +1,4 @@
-package com.szu.wifi;
+package com.szu.wifi_demo;
 
 import android.annotation.SuppressLint;
 import android.content.ContentResolver;
@@ -20,6 +20,10 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+
+import com.szu.wifi.IWiFiListener;
+import com.szu.wifi.IWiFiService;
+import com.szu.wifi.WiFiService;
 
 import java.io.File;
 import java.io.FileOutputStream;
