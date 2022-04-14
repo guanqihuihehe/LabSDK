@@ -12,9 +12,6 @@
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
 
     <application>
-        <activity android:name=".WiFiTestActivity"
-            android:exported="true">
-        </activity>
         <receiver android:name=".WiFiService$WifiDirectBroadcastReceiver" />
     </application>
 </manifest>

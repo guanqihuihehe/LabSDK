@@ -5,10 +5,4 @@
     <uses-permission android:name="android.permission.RECORD_AUDIO" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
 
-    <application>
-        <activity
-            android:name=".VideoRecordTestActivity"
-            android:exported="false" />
-    </application>
-
 </manifest>

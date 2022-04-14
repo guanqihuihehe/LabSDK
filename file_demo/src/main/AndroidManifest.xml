@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.szu.file_demo">
+    <application
+        android:requestLegacyExternalStorage="true">
+        <activity
+            android:name="com.szu.file_demo.FileTestActivity"
+            android:exported="true">
+        </activity>
+    </application>
+</manifest>

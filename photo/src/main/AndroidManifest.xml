@@ -8,9 +8,6 @@
 
     <application>
         <activity
-            android:name=".PhotoTestActivity"
-            android:exported="false" />
-        <activity
             android:name=".PhotoActivity"
             android:exported="false" />
         <provider

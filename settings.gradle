@@ -39,7 +39,7 @@ rootProject.name = "LabSDK"
 //    println "print ${modules[i]}"
 //    include ":${modules[i]}"
 //}
-println "rootDir: ${rootDir}"
+//println "rootDir: ${rootDir}"
 
 include ':app'
 include ':file'
@@ -54,7 +54,18 @@ include ':base'
 include ':sensor'
 include ':video_play'
 include ':video_record'
-include ':python'
+include ':python_demo'
 include ':pack'
 include ':python_api'
 include ':pack_demo'
+include ':audio_play_demo'
+include ':audio_record_demo'
+include ':bluetooth_demo'
+include ':download_demo'
+include ':file_demo'
+include ':photo_demo'
+include ':sensor_demo'
+include ':upload_demo'
+include ':video_play_demo'
+include ':video_record_demo'
+include ':wifi_demo'

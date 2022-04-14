@@ -5,16 +5,18 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 
-import com.szu.bluetooth.BluetoothTestActivity;
-import com.szu.download.DownloadTestActivity;
-import com.szu.file.FileTestActivity;
-import com.szu.photo.PhotoTestActivity;
-import com.szu.python.PythonTestActivity;
-import com.szu.sensor.SensorTestActivity;
-import com.szu.upload.UploadTestActivity;
+import com.szu.audio_play_demo.AudioPlayTestActivity;
+import com.szu.audio_record_demo.AudioRecordTestActivity;
+import com.szu.bluetooth_demo.BluetoothTestActivity;
+import com.szu.download_demo.DownloadTestActivity;
+import com.szu.file_demo.FileTestActivity;
+import com.szu.photo_demo.PhotoTestActivity;
+import com.szu.python_demo.PythonTestActivity;
+import com.szu.sensor_demo.SensorTestActivity;
+import com.szu.upload_demo.UploadTestActivity;
 import com.szu.video_play.VideoPlayTestActivity;
-import com.szu.video_record.VideoRecordTestActivity;
-import com.szu.wifi.WiFiTestActivity;
+import com.szu.video_record_demo.VideoRecordTestActivity;
+import com.szu.wifi_demo.WiFiTestActivity;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -56,8 +58,18 @@ public class MainActivity extends AppCompatActivity {
             startActivity(intent);
         });
 
+        findViewById(R.id.audio_play_test).setOnClickListener(v -> {
+            Intent intent = new Intent(MainActivity.this, AudioPlayTestActivity.class);
+            startActivity(intent);
+        });
+
+        findViewById(R.id.audio_record_test).setOnClickListener(v -> {
+            Intent intent = new Intent(MainActivity.this, AudioRecordTestActivity.class);
+            startActivity(intent);
+        });
+
         findViewById(R.id.audio_test).setOnClickListener(v -> {
-            Intent intent = new Intent(MainActivity.this, AudioTestActivity.class);
+            Intent intent = new Intent(MainActivity.this, AudioPlayTestActivity.class);
             startActivity(intent);
         });
 
