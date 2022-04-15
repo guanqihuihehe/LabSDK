@@ -5,7 +5,7 @@
         android:requestLegacyExternalStorage="true">
         <activity
             android:name="com.szu.file_demo.FileTestActivity"
-            android:exported="true">
+            android:exported="false">
         </activity>
     </application>
 </manifest>

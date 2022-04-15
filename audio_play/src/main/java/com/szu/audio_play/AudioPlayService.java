@@ -71,7 +71,6 @@ public class AudioPlayService implements IAudioPlayService {
 
     @Override
     public void stopPlay() {
-        mMediaPlayerManager.stopPlay();
         if (mPlayerType == 1) {
             mMediaPlayerManager.stopPlay();
         } else if (mPlayerType == 2){

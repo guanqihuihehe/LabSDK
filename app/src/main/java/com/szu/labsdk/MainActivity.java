@@ -5,19 +5,6 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 
-import com.szu.audio_play_demo.AudioPlayTestActivity;
-import com.szu.audio_record_demo.AudioRecordTestActivity;
-import com.szu.bluetooth_demo.BluetoothTestActivity;
-import com.szu.download_demo.DownloadTestActivity;
-import com.szu.file_demo.FileTestActivity;
-import com.szu.photo_demo.PhotoTestActivity;
-import com.szu.python_demo.PythonTestActivity;
-import com.szu.sensor_demo.SensorTestActivity;
-import com.szu.upload_demo.UploadTestActivity;
-import com.szu.video_play.VideoPlayTestActivity;
-import com.szu.video_record_demo.VideoRecordTestActivity;
-import com.szu.wifi_demo.WiFiTestActivity;
-
 public class MainActivity extends AppCompatActivity {
 
     @Override
@@ -29,68 +16,104 @@ public class MainActivity extends AppCompatActivity {
 
     public void initUI() {
         findViewById(R.id.file_test).setOnClickListener(v -> {
-            Intent intent = new Intent(MainActivity.this, FileTestActivity.class);
-            startActivity(intent);
+            try {
+                startActivity(new Intent(MainActivity.this, Class.forName("com.szu.file_demo.FileTestActivity")));
+            } catch (ClassNotFoundException e) {
+                e.printStackTrace();
+            }
         });
 
         findViewById(R.id.bluetooth_test).setOnClickListener(v -> {
-            Intent intent = new Intent(MainActivity.this, BluetoothTestActivity.class);
-            startActivity(intent);
+            try {
+                startActivity(new Intent(MainActivity.this, Class.forName("com.szu.bluetooth_demo.BluetoothTestActivity")));
+            } catch (ClassNotFoundException e) {
+                e.printStackTrace();
+            }
         });
 
         findViewById(R.id.download_test).setOnClickListener(v -> {
-            Intent intent = new Intent(MainActivity.this, DownloadTestActivity.class);
-            startActivity(intent);
+            try {
+                startActivity(new Intent(MainActivity.this, Class.forName("com.szu.download_demo.DownloadTestActivity")));
+            } catch (ClassNotFoundException e) {
+                e.printStackTrace();
+            }
         });
 
         findViewById(R.id.upload_test).setOnClickListener(v -> {
-            Intent intent = new Intent(MainActivity.this, UploadTestActivity.class);
-            startActivity(intent);
+            try {
+                startActivity(new Intent(MainActivity.this, Class.forName("com.szu.upload_demo.UploadTestActivity")));
+            } catch (ClassNotFoundException e) {
+                e.printStackTrace();
+            }
         });
 
         findViewById(R.id.wifi_test).setOnClickListener(v -> {
-            Intent intent = new Intent(MainActivity.this, WiFiTestActivity.class);
-            startActivity(intent);
+            try {
+                startActivity(new Intent(MainActivity.this, Class.forName("com.szu.wifi_demo.WiFiTestActivity")));
+            } catch (ClassNotFoundException e) {
+                e.printStackTrace();
+            }
         });
 
         findViewById(R.id.photo_test).setOnClickListener(v -> {
-            Intent intent = new Intent(MainActivity.this, PhotoTestActivity.class);
-            startActivity(intent);
+            try {
+                startActivity(new Intent(MainActivity.this, Class.forName("com.szu.photo_demo.PhotoTestActivity")));
+            } catch (ClassNotFoundException e) {
+                e.printStackTrace();
+            }
         });
 
         findViewById(R.id.audio_play_test).setOnClickListener(v -> {
-            Intent intent = new Intent(MainActivity.this, AudioPlayTestActivity.class);
-            startActivity(intent);
+            try {
+                startActivity(new Intent(MainActivity.this, Class.forName("com.szu.audio_play_demo.AudioPlayTestActivity")));
+            } catch (ClassNotFoundException e) {
+                e.printStackTrace();
+            }
         });
 
         findViewById(R.id.audio_record_test).setOnClickListener(v -> {
-            Intent intent = new Intent(MainActivity.this, AudioRecordTestActivity.class);
-            startActivity(intent);
+            try {
+                startActivity(new Intent(MainActivity.this, Class.forName("com.szu.audio_record_demo.AudioRecordTestActivity")));
+            } catch (ClassNotFoundException e) {
+                e.printStackTrace();
+            }
         });
 
-        findViewById(R.id.audio_test).setOnClickListener(v -> {
-            Intent intent = new Intent(MainActivity.this, AudioPlayTestActivity.class);
-            startActivity(intent);
-        });
+//        findViewById(R.id.audio_test).setOnClickListener(v -> {
+//            Intent intent = new Intent(MainActivity.this, AudioTestActivity.class);
+//            startActivity(intent);
+//        });
 
         findViewById(R.id.sensor_test).setOnClickListener(v -> {
-            Intent intent = new Intent(MainActivity.this, SensorTestActivity.class);
-            startActivity(intent);
+            try {
+                startActivity(new Intent(MainActivity.this, Class.forName("com.szu.sensor_demo.SensorTestActivity")));
+            } catch (ClassNotFoundException e) {
+                e.printStackTrace();
+            }
         });
 
         findViewById(R.id.video_record_test).setOnClickListener(v -> {
-            Intent intent = new Intent(MainActivity.this, VideoRecordTestActivity.class);
-            startActivity(intent);
+            try {
+                startActivity(new Intent(MainActivity.this, Class.forName("com.szu.video_record_demo.VideoRecordTestActivity")));
+            } catch (ClassNotFoundException e) {
+                e.printStackTrace();
+            }
         });
 
         findViewById(R.id.video_play_test).setOnClickListener(v -> {
-            Intent intent = new Intent(MainActivity.this, VideoPlayTestActivity.class);
-            startActivity(intent);
+            try {
+                startActivity(new Intent(MainActivity.this, Class.forName("com.szu.video_play_demo.VideoPlayTestActivity")));
+            } catch (ClassNotFoundException e) {
+                e.printStackTrace();
+            }
         });
 
         findViewById(R.id.python_test).setOnClickListener(v -> {
-            Intent intent = new Intent(MainActivity.this, PythonTestActivity.class);
-            startActivity(intent);
+            try {
+                startActivity(new Intent(MainActivity.this, Class.forName("com.szu.python_demo.PythonTestActivity")));
+            } catch (ClassNotFoundException e) {
+                e.printStackTrace();
+            }
         });
     }
 }

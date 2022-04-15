@@ -2,7 +2,6 @@ package com.szu.python_demo;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.content.res.AssetFileDescriptor;
 import android.os.Bundle;
 import android.util.Log;
 import android.widget.Toast;
@@ -11,13 +10,11 @@ import com.chaquo.python.Kwarg;
 import com.chaquo.python.PyObject;
 import com.chaquo.python.Python;
 import com.chaquo.python.android.AndroidPlatform;
+import com.szu.python_api.IPythonService;
+import com.szu.python_api.PythonService;
 
 import org.tensorflow.lite.Interpreter;
 
-import java.io.FileInputStream;
-import java.io.IOException;
-import java.nio.MappedByteBuffer;
-import java.nio.channels.FileChannel;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -76,38 +73,14 @@ public class PythonTestActivity extends AppCompatActivity {
         JavaBean data = obj4.toJava(JavaBean.class);
         data.print();
 
+        IPythonService pythonService = new PythonService();
+
         //加载tflite文件
-        Interpreter mTflite = load_model("model_test");
+        Interpreter mTflite = pythonService.load_model("model_test", this);
         if (mTflite != null) {
             Toast.makeText(this, " model load success", Toast.LENGTH_SHORT).show();
         } else {
             Toast.makeText(this, " model load fail", Toast.LENGTH_SHORT).show();
         }
-    }
-
-    // load infer model
-    private Interpreter load_model(String model) {
-        try {
-            Interpreter tflite;
-            tflite = new Interpreter(loadModelFile(model).asReadOnlyBuffer());
-            Log.d(TAG, model + " model load success");
-            return tflite;
-        } catch (IOException e) {
-            Log.d(TAG, model + " model load fail");
-            e.printStackTrace();
-            return null;
-        }
-    }
-
-    /**
-     * Memory-map the model file in Assets.
-     */
-    private MappedByteBuffer loadModelFile(String model) throws IOException {
-        AssetFileDescriptor fileDescriptor = getApplicationContext().getAssets().openFd(model + ".tflite");
-        FileInputStream inputStream = new FileInputStream(fileDescriptor.getFileDescriptor());
-        FileChannel fileChannel = inputStream.getChannel();
-        long startOffset = fileDescriptor.getStartOffset();
-        long declaredLength = fileDescriptor.getDeclaredLength();
-        return fileChannel.map(FileChannel.MapMode.READ_ONLY, startOffset, declaredLength);
     }
 }

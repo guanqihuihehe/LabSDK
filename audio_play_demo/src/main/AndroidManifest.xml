@@ -2,6 +2,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.szu.audio_play_demo">
     <application>
-        <activity android:name="com.szu.audio_play_demo.AudioPlayTestActivity"/>
+        <activity android:name="com.szu.audio_play_demo.AudioPlayTestActivity"
+            android:exported="false"/>
     </application>
 </manifest>

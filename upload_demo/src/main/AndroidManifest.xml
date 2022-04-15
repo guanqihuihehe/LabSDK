@@ -3,6 +3,7 @@
     package="com.szu.upload_demo">
 
     <application>
-        <activity android:name=".UploadTestActivity"/>
+        <activity android:name=".UploadTestActivity"
+            android:exported="false"/>
     </application>
 </manifest>

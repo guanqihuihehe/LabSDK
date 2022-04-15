@@ -110,13 +110,16 @@ public class WiFiService implements IWiFiService{
 
             @Override
             public void onConnectionInfoAvailable(WifiP2pInfo wifiP2pInfo) {
+                Log.e(TAG, "接收到wifiP2pInfo");
                 if (wifiP2pInfo != null) {
+                    Log.e(TAG, "wifiP2pInfo != null");
                     mInfo = wifiP2pInfo;
                     if (mProgressDialog != null && mProgressDialog.isShowing()) {
                         mProgressDialog.dismiss();
                     }
                     mWiFiListener.onRequestConnectionInfo(wifiP2pInfo);
                 } else {
+                    Log.e(TAG, "wifiP2pInfo == null");
                     mWiFiListener.onRequestConnectionInfo(null);
                 }
             }

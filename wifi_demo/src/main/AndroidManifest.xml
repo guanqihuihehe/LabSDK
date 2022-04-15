@@ -3,6 +3,7 @@
     package="com.szu.wifi_demo">
 
     <application>
-        <activity android:name=".WiFiTestActivity"/>
+        <activity android:name=".WiFiTestActivity"
+            android:exported="false"/>
     </application>
 </manifest>

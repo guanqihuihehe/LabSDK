@@ -3,6 +3,7 @@
     package="com.szu.video_record_demo">
 
     <application>
-        <activity android:name=".VideoRecordTestActivity"/>
+        <activity android:name=".VideoRecordTestActivity"
+            android:exported="false"/>
     </application>
 </manifest>

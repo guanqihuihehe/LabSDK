@@ -1,5 +1,6 @@
 plugins {
     id 'com.android.library'
+    id 'com.kezong.fat-aar'
 }
 
 android {
@@ -26,4 +27,16 @@ android {
 }
 
 dependencies {
+    embed project(path: ':audio_play_demo')
+    embed project(path: ':audio_record_demo')
+    embed project(path: ':bluetooth_demo')
+    embed project(path: ':download_demo')
+    embed project(path: ':file_demo')
+    embed project(path: ':photo_demo')
+    embed project(path: ':python_demo')
+    embed project(path: ':sensor_demo')
+    embed project(path: ':upload_demo')
+    embed project(path: ':video_play_demo')
+    embed project(path: ':video_record_demo')
+    embed project(path: ':wifi_demo')
 }

@@ -20,7 +20,7 @@ def print_list(data):
 
 # python调用Java类
 def get_java_bean():
-    JavaBean = jclass("com.szu.python.JavaBean")
+    JavaBean = jclass("com.szu.python_demo.JavaBean")
     jb = JavaBean("python")
     jb.setData("json")
     jb.setData("xml")
