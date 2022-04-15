@@ -26,9 +26,7 @@ import androidx.core.app.NotificationCompat;
 
 
 import java.util.HashMap;
-import java.util.Iterator;
 import java.util.Map;
-import java.util.Set;
 
 public class DownloadService extends Service implements IDownloadService{
 
