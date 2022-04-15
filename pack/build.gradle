@@ -27,17 +27,34 @@ android {
 }
 
 dependencies {
-    embed project(path: ':audio_play')
-    embed project(path: ':audio_record')
     embed project(path: ':base')
-    embed project(path: ':bluetooth')
-    embed project(path: ':download')
-    embed project(path: ':file')
-    embed project(path: ':photo')
-    embed project(path: ':python_api')
-    embed project(path: ':sensor')
-    embed project(path: ':upload')
-    embed project(path: ':video_play')
-    embed project(path: ':video_record')
-    embed project(path: ':wifi')
+
+    def modulePropertiesFile = new File("${rootDir}/local.properties")
+    def moduleProperties = new Properties()
+    moduleProperties.load(new FileInputStream(modulePropertiesFile))
+    def includeModulesString = moduleProperties.getProperty("include_modules")
+    println "print ${includeModulesString}"
+    String [] includeModules = includeModulesString.split(",")
+    for (int i = 0; i<includeModules.length; i++) {
+        if (includeModules[i] == "python") {
+            embed project(path: ':python_api')
+            println "packs api: python_api"
+            continue
+        }
+        embed project(path: ":${includeModules[i]}")
+        println "packs api: ${includeModules[i]}"
+    }
+
+//    embed project(path: ':audio_play')
+//    embed project(path: ':audio_record')
+//    embed project(path: ':bluetooth')
+//    embed project(path: ':download')
+//    embed project(path: ':file')
+//    embed project(path: ':photo')
+//    embed project(path: ':python_api')
+//    embed project(path: ':sensor')
+//    embed project(path: ':upload')
+//    embed project(path: ':video_play')
+//    embed project(path: ':video_record')
+//    embed project(path: ':wifi')
 }

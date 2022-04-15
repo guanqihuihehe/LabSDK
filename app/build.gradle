@@ -70,29 +70,36 @@ dependencies {
         implementation fileTree(dir: 'libs', include: ['*.aar'])
     } else {
         println "building: isPackTest == false"
-        implementation project(path: ':audio_play_demo')
-        implementation project(path: ':audio_record_demo')
         implementation project(path: ':base')
-        implementation project(path: ':bluetooth_demo')
-        implementation project(path: ':download_demo')
-        implementation project(path: ':file_demo')
-        implementation project(path: ':python_demo')
-        implementation project(path: ':sensor_demo')
-        implementation project(path: ':upload_demo')
-        implementation project(path: ':video_play_demo')
-        implementation project(path: ':video_record_demo')
-        implementation project(path: ':wifi_demo')
-        implementation project(path: ':photo_demo')
+
+        def includeModulesString = moduleProperties.getProperty("include_modules")
+        println "print ${includeModulesString}"
+        String [] includeModules = includeModulesString.split(",")
+
+        for (int i = 0; i<includeModules.length; i++) {
+            println "app depends ${includeModules[i]}"
+            if (includeModules[i] == "python") {
+                continue
+            }
+            implementation project(path: ":${includeModules[i]}_demo")
+        }
+//        implementation project(path: ':audio_play_demo')
+//        implementation project(path: ':audio_record_demo')
+//        implementation project(path: ':bluetooth_demo')
+//        implementation project(path: ':download_demo')
+//        implementation project(path: ':file_demo')
+//        implementation project(path: ':python_demo')
+//        implementation project(path: ':sensor_demo')
+//        implementation project(path: ':upload_demo')
+//        implementation project(path: ':video_play_demo')
+//        implementation project(path: ':video_record_demo')
+//        implementation project(path: ':wifi_demo')
+//        implementation project(path: ':photo_demo')
     }
     implementation 'androidx.core:core-ktx:1.7.0'
     implementation 'androidx.appcompat:appcompat:1.4.1'
     implementation 'com.google.android.material:material:1.5.0'
     implementation 'androidx.constraintlayout:constraintlayout:2.1.3'
-
-//    for (int i = 0; i<modules.length; i++) {
-//        println "app depends ${modules[i]}"
-//        implementation project(path: ":${modules[i]}")
-//    }
 
 
     testImplementation 'junit:junit:4.13.2'
