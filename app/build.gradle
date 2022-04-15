@@ -54,22 +54,36 @@ android {
     }
 }
 
-//def modulePropertiesFile = new File("${rootDir}/local.properties")
-//def moduleProperties = new Properties()
-//moduleProperties.load(new FileInputStream(modulePropertiesFile))
-//def isPackTest = moduleProperties.getProperty("is_pack_test");
-//if (isPackTest == "true") {
-//    println "packDemo : isPackTest == true"
-//} else {
-//    println "packDemo: isPackTest == false"
-//}
+def modulePropertiesFile = new File("${rootDir}/local.properties")
+def moduleProperties = new Properties()
+moduleProperties.load(new FileInputStream(modulePropertiesFile))
+def isPackTest = moduleProperties.getProperty("is_pack_test");
+if (isPackTest == "true") {
+    println "app: isPackTest == true"
+} else {
+    println "app: isPackTest == false"
+}
 
 dependencies {
-//    if (isPackTest == true) {
-//        implementation fileTree(dir: 'libs', include: ['*.aar'])
-//    } else {
-//        println "isPackTest == false"
-//    }
+    if (isPackTest == "true") {
+        println "building: isPackTest == true"
+        implementation fileTree(dir: 'libs', include: ['*.aar'])
+    } else {
+        println "building: isPackTest == false"
+        implementation project(path: ':audio_play_demo')
+        implementation project(path: ':audio_record_demo')
+        implementation project(path: ':base')
+        implementation project(path: ':bluetooth_demo')
+        implementation project(path: ':download_demo')
+        implementation project(path: ':file_demo')
+        implementation project(path: ':python_demo')
+        implementation project(path: ':sensor_demo')
+        implementation project(path: ':upload_demo')
+        implementation project(path: ':video_play_demo')
+        implementation project(path: ':video_record_demo')
+        implementation project(path: ':wifi_demo')
+        implementation project(path: ':photo_demo')
+    }
     implementation 'androidx.core:core-ktx:1.7.0'
     implementation 'androidx.appcompat:appcompat:1.4.1'
     implementation 'com.google.android.material:material:1.5.0'
@@ -79,19 +93,7 @@ dependencies {
 //        println "app depends ${modules[i]}"
 //        implementation project(path: ":${modules[i]}")
 //    }
-    implementation project(path: ':audio_play_demo')
-    implementation project(path: ':audio_record_demo')
-    implementation project(path: ':base')
-    implementation project(path: ':bluetooth_demo')
-    implementation project(path: ':download_demo')
-    implementation project(path: ':file_demo')
-    implementation project(path: ':python_demo')
-    implementation project(path: ':sensor_demo')
-    implementation project(path: ':upload_demo')
-    implementation project(path: ':video_play_demo')
-    implementation project(path: ':video_record_demo')
-    implementation project(path: ':wifi_demo')
-    implementation project(path: ':photo_demo')
+
 
     testImplementation 'junit:junit:4.13.2'
     androidTestImplementation 'androidx.test.ext:junit:1.1.3'

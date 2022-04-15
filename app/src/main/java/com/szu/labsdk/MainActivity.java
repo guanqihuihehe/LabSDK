@@ -110,7 +110,7 @@ public class MainActivity extends AppCompatActivity {
 
         findViewById(R.id.python_test).setOnClickListener(v -> {
             try {
-                startActivity(new Intent(MainActivity.this, Class.forName("com.szu.python_demo.PythonTestActivity")));
+                startActivity(new Intent(MainActivity.this, Class.forName("com.szu.labsdk.pythontest.PythonTestActivity")));
             } catch (ClassNotFoundException e) {
                 e.printStackTrace();
             }
