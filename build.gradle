@@ -13,32 +13,77 @@ plugins {
     id 'com.chaquo.python' version '11.0.0' apply false
 }
 
-task packDemo(type: Exec) {
-    def modulePropertiesFile = new File("${rootDir}/local.properties")
-    def moduleProperties = new Properties()
-    moduleProperties.load(new FileInputStream(modulePropertiesFile))
-    def doPack = moduleProperties.getProperty("do_pack");
+def modulePropertiesFile = new File("${rootDir}/local.properties")
+def moduleProperties = new Properties()
+moduleProperties.load(new FileInputStream(modulePropertiesFile))
+def doPack = moduleProperties.getProperty("do_pack")
+def isDebug = moduleProperties.getProperty("is_debug")
+def isPackTest = moduleProperties.getProperty("is_pack_test")
+
+task packDemoAar(type: Exec) {
     if (doPack == "true") {
         println "packDemo : doPack == true"
-        commandLine( 'gradlew.bat', 'pack_demo:assemble')
-        commandLine( 'gradlew.bat', 'pack:assemble')
+        if (isDebug == "true") {
+            println "packDemo : isDebug == true"
+            commandLine( 'gradlew.bat', 'pack_demo:assembleDebug')
+        } else {
+            println "packDemo : isDebug == false"
+            commandLine( 'gradlew.bat', 'pack_demo:assembleRelease')
+        }
     } else {
         println "packDemo: doPack == false"
         commandLine('gradlew.bat', '-v')
     }
 }
 
-task copyAar(type: Copy) {
-    def modulePropertiesFile = new File("${rootDir}/local.properties")
-    def moduleProperties = new Properties()
-    moduleProperties.load(new FileInputStream(modulePropertiesFile))
-    def isPackTest = moduleProperties.getProperty("is_pack_test");
+task packAar(type: Exec) {
+    if (doPack == "true") {
+        dependsOn packDemoAar
+        println "packDemo : doPack == true"
+        if (isDebug == "true") {
+            println "packDemo : isDebug == true"
+            commandLine( 'gradlew.bat', 'pack:assembleDebug')
+        } else {
+            println "packDemo : isDebug == false"
+            commandLine( 'gradlew.bat', 'pack:assembleRelease')
+        }
+    } else {
+        println "packDemo: doPack == false"
+        commandLine('gradlew.bat', '-v')
+    }
+}
+
+//删除原有的aar文件
+task deleteFile(type: Delete) {
     if (isPackTest == "true") {
+        delete 'app/libs/pack-debug.aar'
+        delete 'app/libs/pack-release.aar'
+        delete 'app/libs/pack_demo-debug.aar'
+        delete 'app/libs/pack_demo-release.aar'
+    }
+}
+
+task copyAar(type: Copy) {
+    if (isPackTest == "true") {
+        dependsOn deleteFile
         println "copyAar : isPackTest == true"
-        from 'pack_demo/build/outputs/aar'
-        into 'app/libs'
-        from 'pack/build/outputs/aar'
-        into 'app/libs'
+        if (isDebug == "true") {
+            println "packDemo : isDebug == true"
+            from 'pack_demo/build/outputs/aar'
+            into 'app/libs'
+            include "pack-debug.aar"
+            from 'pack/build/outputs/aar'
+            into 'app/libs'
+            include "pack_demo-debug.aar"
+        } else {
+            println "packDemo : isDebug == false"
+            from 'pack_demo/build/outputs/aar'
+            into 'app/libs'
+            include "pack-release.aar"
+            from 'pack/build/outputs/aar'
+            into 'app/libs'
+            include "pack_demo-release.aar"
+        }
     } else {
         println "copyAar: isPackTest == false"
     }
