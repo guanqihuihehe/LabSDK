@@ -60,7 +60,7 @@ public interface ISensorService {
     boolean startSensor(Sensor sensor, int delayTime, SensorEventListener sensorEventListener);
 
     /**
-     * 开启某种传感器的数据监听
+     * 关闭某种传感器的数据监听
      * @param sensorEventListener 传感器回调事件，这里传入的事件要和startSensor接口传入的一致
      * 建议在退出activity时调用，或者不监听时调用
      * */

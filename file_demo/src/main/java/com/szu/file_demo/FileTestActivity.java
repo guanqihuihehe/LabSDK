@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import com.szu.file.FileManager;
 
@@ -22,37 +23,41 @@ public class FileTestActivity extends AppCompatActivity {
     public void initUI() {
 
         findViewById(R.id.get_internal_path).setOnClickListener(v -> {
-            mFileManager.getInternalFilePath();
+            Toast.makeText(FileTestActivity.this, mFileManager.getInternalFilePath(), Toast.LENGTH_SHORT);
         });
         findViewById(R.id.get_external_path).setOnClickListener(v -> {
-            mFileManager.getExternalFilePath();
+            Toast.makeText(FileTestActivity.this, mFileManager.getExternalFilePath(), Toast.LENGTH_SHORT);
         });
         findViewById(R.id.get_external_storage).setOnClickListener(v -> {
-            mFileManager.getExternalStoragePath();
+            Toast.makeText(FileTestActivity.this, mFileManager.getExternalStoragePath(), Toast.LENGTH_SHORT);
         });
 
         findViewById(R.id.create_new_dir).setOnClickListener(v -> {
             EditText dirNameEditText = findViewById(R.id.store_dir);
             String dirName = dirNameEditText.getText().toString();
             mFileManager.createDir(dirName);
+            Toast.makeText(FileTestActivity.this, "创建成功:"+dirName, Toast.LENGTH_SHORT);
         });
         findViewById(R.id.create_outside_dir).setOnClickListener(v -> {
             EditText dirNameEditText = findViewById(R.id.store_dir);
             String dirName = dirNameEditText.getText().toString();
             String parentPath = mFileManager.getExternalStoragePath();
             mFileManager.createDir(dirName, parentPath);
+            Toast.makeText(FileTestActivity.this, "创建成功:"+parentPath+"/"+dirName, Toast.LENGTH_SHORT);
         });
 
         findViewById(R.id.create_new_file).setOnClickListener(v -> {
             EditText fileNameEditText = findViewById(R.id.store_file);
             String fileName = fileNameEditText.getText().toString();
             mFileManager.createFile(fileName);
+            Toast.makeText(FileTestActivity.this, "创建成功:"+fileName, Toast.LENGTH_SHORT);
         });
         findViewById(R.id.create_outside_file).setOnClickListener(v -> {
             EditText fileNameEditText = findViewById(R.id.store_file);
             String fileName = fileNameEditText.getText().toString();
             String parentPath = mFileManager.getExternalStoragePath();
             mFileManager.createFile(fileName, parentPath);
+            Toast.makeText(FileTestActivity.this, "创建成功:"+parentPath+"/"+fileName, Toast.LENGTH_SHORT);
         });
 
         findViewById(R.id.delete_dir).setOnClickListener(v -> {
