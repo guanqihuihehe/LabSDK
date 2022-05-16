@@ -15,10 +15,10 @@ import android.widget.Toast;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.szu.bluetooth.BluetoothService;
-import com.szu.bluetooth.IBluetoothService;
-import com.szu.bluetooth.IConnectCallback;
-import com.szu.bluetooth.IDiscoveryCallback;
+import com.szu.bluetooth.impl.BluetoothService;
+import com.szu.bluetooth.api.IBluetoothService;
+import com.szu.bluetooth.api.IConnectCallback;
+import com.szu.bluetooth.api.IDiscoveryCallback;
 
 import java.io.IOException;
 import java.io.InputStream;

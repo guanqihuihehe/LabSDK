@@ -8,9 +8,9 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
 
-import com.szu.download.DownloadService;
-import com.szu.download.IDownloadClientListener;
-import com.szu.download.IDownloadService;
+import com.szu.download.impl.DownloadService;
+import com.szu.download.api.IDownloadClientListener;
+import com.szu.download.api.IDownloadService;
 
 import java.io.File;
 

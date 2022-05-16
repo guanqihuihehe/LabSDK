@@ -7,9 +7,9 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.szu.upload.IUploadListener;
-import com.szu.upload.IUploadService;
-import com.szu.upload.UploadService;
+import com.szu.upload.api.IUploadListener;
+import com.szu.upload.api.IUploadService;
+import com.szu.upload.impl.UploadService;
 
 public class UploadTestActivity extends AppCompatActivity {
 

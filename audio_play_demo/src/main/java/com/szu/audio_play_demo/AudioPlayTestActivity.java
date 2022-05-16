@@ -7,8 +7,8 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.szu.audio_play.AudioPlayService;
-import com.szu.audio_play.IAudioPlayService;
+import com.szu.audio_play.impl.AudioPlayService;
+import com.szu.audio_play.api.IAudioPlayService;
 
 import java.io.File;
 

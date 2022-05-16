@@ -7,8 +7,8 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.szu.audio_record.AudioRecordService;
-import com.szu.audio_record.IAudioRecordService;
+import com.szu.audio_record.impl.AudioRecordService;
+import com.szu.audio_record.api.IAudioRecordService;
 
 import java.io.File;
 

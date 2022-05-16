@@ -9,9 +9,9 @@ import android.widget.ImageView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.szu.photo.IPhotoListener;
-import com.szu.photo.IPhotoService;
-import com.szu.photo.PhotoService;
+import com.szu.photo.api.IPhotoListener;
+import com.szu.photo.api.IPhotoService;
+import com.szu.photo.impl.PhotoService;
 
 public class PhotoTestActivity extends AppCompatActivity {
 

@@ -8,10 +8,10 @@ import android.view.View;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.szu.video_record.IVideoListener;
-import com.szu.video_record.IVideoService;
-import com.szu.video_record.VideoRecorderConfig;
-import com.szu.video_record.VideoService;
+import com.szu.video_record.api.IVideoListener;
+import com.szu.video_record.api.IVideoService;
+import com.szu.video_record.api.VideoRecorderConfig;
+import com.szu.video_record.impl.VideoService;
 
 import java.io.File;
 

@@ -14,7 +14,7 @@ import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
 
-import com.szu.sensor.SensorService;
+import com.szu.sensor.impl.SensorService;
 
 import java.util.ArrayList;
 import java.util.List;

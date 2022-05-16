@@ -8,7 +8,7 @@
     <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
 
     <application>
-        <service android:name=".AudioRecordService" />
+        <service android:name=".impl.AudioRecordService" />
     </application>
 
 </manifest>

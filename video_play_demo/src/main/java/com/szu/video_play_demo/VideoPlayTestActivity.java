@@ -8,8 +8,8 @@ import android.widget.EditText;
 import android.widget.Toast;
 import android.widget.VideoView;
 
-import com.szu.video_play.IVideoPlayService;
-import com.szu.video_play.VideoPlayService;
+import com.szu.video_play.api.IVideoPlayService;
+import com.szu.video_play.impl.VideoPlayService;
 
 public class VideoPlayTestActivity extends AppCompatActivity {
 

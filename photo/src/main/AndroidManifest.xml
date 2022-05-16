@@ -8,7 +8,7 @@
 
     <application>
         <activity
-            android:name=".PhotoActivity"
+            android:name=".impl.PhotoActivity"
             android:exported="false" />
         <provider
             android:name="androidx.core.content.FileProvider"

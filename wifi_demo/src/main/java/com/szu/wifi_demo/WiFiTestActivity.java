@@ -21,9 +21,9 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.szu.wifi.IWiFiListener;
-import com.szu.wifi.IWiFiService;
-import com.szu.wifi.WiFiService;
+import com.szu.wifi.api.IWiFiListener;
+import com.szu.wifi.api.IWiFiService;
+import com.szu.wifi.impl.WiFiService;
 
 import java.io.File;
 import java.io.FileOutputStream;
